@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+
+{{#if result.length}}
+<table>
+  <tr>
+    <td>id</td>
+    <td>userId</td>
+    <td>name</td>
+    <td>priority</td>
+    <td>createdAt</td>
+  </tr>
+
+{{#each result}}
+  <tr>
+    <td>{{ _id }}</td>
+    <td>{{ userId }}</td>
+    <td>{{ name }}</td>
+    <td>{{ priority }}</td>
+    <td>{{ createdAt }}</td>
+  </tr>
+{{/each}}
+</table>
+
+{{else}}
+<p>Haven't find tickets for this request</p>>
+{{/if}}
+
