@@ -64,7 +64,7 @@ const getTickets = async (req, res) => {
 
   //send reverse sorted array from tickets
   if (req.query.sort === "desc") {
-    return result.reverse();
+    result.reverse();
   }
 
   //send json or html
