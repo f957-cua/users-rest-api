@@ -24,8 +24,8 @@ const getTickets = async (req, res) => {
     req.query.userId &&
     req.query.priority
   ) {
-    result =
-      await db_ticket.getTicketByUserIdAndPrio(
+    result = await db_ticket
+      .getTicketByUserIdAndPrio(
         req.query.userId,
         req.query.priority
       );
@@ -36,8 +36,8 @@ const getTickets = async (req, res) => {
     req.query.userId &&
     !req.query.priority
   ) {
-    result =
-      await db_ticket.getTicketByUserId(
+    result = await db_ticket
+      .getTicketByUserId(
         req.query.userId
       );
   }
@@ -47,8 +47,8 @@ const getTickets = async (req, res) => {
     req.query.priority &&
     !req.query.userId
   ) {
-    result =
-      await db_ticket.getTicketByPriority(
+    result = await db_ticket
+      .getTicketByPriority(
         req.query.priority
       );
   }

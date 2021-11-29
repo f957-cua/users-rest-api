@@ -15,19 +15,21 @@ const createTicket = async (
 };
 
 const getAllTickets = async () => {
-  return Ticket.find();
+  return Ticket.find().lean();
 };
 
 const getTicketByUserId = async (
   userId
 ) => {
-  return Ticket.find({ userId });
+  return Ticket.find({ userId }).lean();
 };
 
 const getTicketByPriority = async (
   priority
 ) => {
-  return Ticket.find({ priority });
+  return Ticket.find({
+    priority,
+  }).lean();
 };
 
 const getTicketByUserIdAndPrio = async (
@@ -37,7 +39,7 @@ const getTicketByUserIdAndPrio = async (
   return Ticket.find({
     userId,
     priority,
-  });
+  }).lean();
 };
 
 module.exports = {
