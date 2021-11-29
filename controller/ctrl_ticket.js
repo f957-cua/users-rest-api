@@ -64,7 +64,7 @@ const getTickets = async (req, res) => {
 
   //send reverse sorted array from tickets
   if (req.query.sort === "desc") {
-    result.reverse();
+    return result.reverse();
   }
 
   //send json or html
@@ -89,14 +89,19 @@ const getTickets = async (req, res) => {
     req.query.outputFormat === "json"
   ) {
     return res.json({ result });
-  } else {
-    
+  } else if (
+    req.query.outputFormat !== "json" &&
+    req.query.outputFormat !== "html" &&
+    req.query.outputFormat !== undefined
+  ) {
     // handled 400 errors
     throw new createError(
       400,
       "Incorrect output format"
     );
   }
+
+  return res.json({result})
 }
 
 module.exports = {
