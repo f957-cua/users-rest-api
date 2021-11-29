@@ -2,9 +2,6 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const exphbs = require("express-handlebars");
-const {
-  allowInsecurePrototypeAccess,
-} = require("@handlebars/allow-prototype-access");
 
 const app = express();
 

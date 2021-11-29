@@ -1,15 +1,20 @@
-<h1>{{title}}</h1>
 
 {{#if result.length}}
 <table>
-  <tr>
-    <td>id</td>
-    <td>userId</td>
-    <td>name</td>
-    <td>priority</td>
-    <td>createdAt</td>
-  </tr>
+  <caption>
+    tickets list
+  </caption>
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>userId</td>
+      <td>name</td>
+      <td>priority</td>
+      <td>createdAt</td>
+    </tr>
+  </thead>
 
+<tbody>
 {{#each result}}
   <tr>
     <td>{{_id}}</td>
@@ -19,9 +24,9 @@
     <td>{{createdAt}}</td>
   </tr>
 {{/each}}
+</tbody>
 </table>
 
 {{else}}
 <p>Haven't find tickets for this request</p>>
 {{/if}}
-
